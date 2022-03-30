@@ -8,8 +8,8 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.alibaba.baichuan.android.trade.AlibcTrade
-import com.alibaba.baichuan.android.trade.callback.AlibcTradeCallback
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams
+import com.alibaba.baichuan.trade.biz.AlibcTradeCallback
 import com.alibaba.baichuan.trade.biz.applink.adapter.AlibcFailModeType
 import com.alibaba.baichuan.trade.biz.context.AlibcTradeResult
 import com.alibaba.baichuan.trade.biz.core.taoke.AlibcTaokeParams
