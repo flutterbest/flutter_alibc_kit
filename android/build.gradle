@@ -39,6 +39,7 @@ android {
 }
 
 dependencies {
+    compileOnly files("/Users/niugengyun/fvm/versions/2.8.1/bin/cache/artifacts/engine/android-arm/flutter.jar")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.alibaba:fastjson:1.2.52'
     //security
