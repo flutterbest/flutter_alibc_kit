@@ -9,8 +9,8 @@ Android标准版  4.0.0.40
 iOS标准版      4.0.1.17 
 ```
 
-pub地址：[flutter_alibc](https://pub.dev/packages/flutter_alibc)
-github地址：[flutter_alibc](https://github.com/flutterbest/flutter_alibc.git)
+pub地址：[flutter_alibc](https://pub.dev/packages/alibc_kit)
+github地址：[flutter_alibc](https://github.com/flutterbest/flutter_alibc_kit.git)
 
 
 ## Getting Started
