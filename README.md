@@ -1,49 +1,34 @@
 # flutter_alibc
 
-Flutter版本的阿里百川
-android V4.0.0.8版本
-ios V4.0.1.6 版本
+Flutter版本的阿里百川，原作者维护太慢，这个插件以后我自己维护，最新版本必须本地引入依赖了，所以之前版本的maven和pod源全部失效了。
+
+# 百川SDK版本
+
+```
+Android标准版  4.0.0.40
+iOS标准版      4.0.1.17 
+```
 
 pub地址：[flutter_alibc](https://pub.dev/packages/flutter_alibc)
-github地址：[flutter_alibc](https://github.com/FlutterTaoBaoKe/flutter_alibc.git)
+github地址：[flutter_alibc](https://github.com/flutterbest/flutter_alibc.git)
 
-可以给个star🐴，混口饭吃
 
-支持Android和iOS
-
-邮箱：
-
-Android：983598009@qq.com
-
-iOS：329106954@qq.com
-P.S:另有开普勒插件[flutter_kepler](https://github.com/FlutterTaoBaoKe/flutter_kepler)
 ## Getting Started
-
 ### 工程性配置
 
-参考[阿里百川官网](https://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.3043be48zxxuk5&treeId=129&articleId=118102&docType=1)
+参考[阿里百川官网](https://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.a838be48k4hYDc&treeId=129&articleId=106383&docType=1)
 Android: 注意在新版本gradle编译时,会强制校验远程仓库是否存在.pom文件, 阿里百川仓库目前缺少.pom文件, 因此目前先使用较低版本gradle
 
-### 引入
-[如何引入项目](https://pub.dev/packages/flutter_alibc#-installing-tab-)
-iOS请在podfile文件非注释的第一行，加入淘宝源，如果有其他源，请放在其他源下方,没有其他源只需要加这一个即可
-```
-source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
-```
-看不懂这句话就看下demo中的example/ios/podfile文件第4行代码，第3行是其他源的示例可以不加
-
-### 支持swift了
-### 感谢[@a4081675](https://github.com/a4081675)同学
-[issues44](https://github.com/FlutterTaoBaoKe/flutter_alibc/issues/44)
 ### 方法说明
 * 头文件引入
-```
+
+``` dart
 import 'package:flutter_alibc/flutter_alibc.dart';
 ```
 
 * 初始化
 
-```
+``` dart
  /**
    * 初始化
    * version:当前app版本
@@ -57,7 +42,8 @@ var result = await FlutterAlibc.initAlibc(version:"",appName:"");
 ```
 
 * 登录淘宝
-```
+
+``` dart
 /**
    * 登录淘宝
    * result :{
@@ -76,13 +62,14 @@ var result = await FlutterAlibc.initAlibc(version:"",appName:"");
 ```
 
 * 淘宝登出
-```
+
+``` dart
 FlutterAlibc.loginOut();
 ```
 
 * 淘客登录，二次授权获取access_token
 
-```
+``` dart
  /**
    * @description: 获取access_token
    * @param 
@@ -96,21 +83,22 @@ FlutterAlibc.loginOut();
    * result: {"data":{"accessToken":"xxx"},"errorMessage":"成功","errorCode":"0"}//获取成功为token，获取失败为空字符串
    */
     FlutterAlibc.taoKeLogin(
-                    url:"",	//必须参数，用于授权登录的url
-                    openType : AlibcOpenType.AlibcOpenTypeAuto,
-                    isNeedCustomNativeFailMode : false,
-                    nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
-                    schemeType : AlibcSchemeType.AlibcSchemeTmall,
-                    taokeParams : {},
-                    backUrl:"",
-                    callback: (result){
-                        print('淘客登录 ' + json.encode(result));
-                    });
+        url:"",	//必须参数，用于授权登录的url
+        openType : AlibcOpenType.AlibcOpenTypeAuto,
+        isNeedCustomNativeFailMode : false,
+        nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
+        schemeType : AlibcSchemeType.AlibcSchemeTmall,
+        taokeParams : {},
+        backUrl:"",
+        callback: (result){
+            print('淘客登录 ' + json.encode(result));
+        },
+    );
 ```
 
 * 淘客登录，二次授权获取code
 
-```
+``` dart
  /**
    * @description: 获取code
    * @param 
@@ -124,21 +112,22 @@ FlutterAlibc.loginOut();
    * result: {"data":{"code":"xxx"},"errorMessage":"成功","errorCode":"0"}//获取成功为code，获取失败为空字符串
    */
     FlutterAlibc.taoKeLoginForCode(
-                    url:"",	//必须参数，用于授权登录的url
-                    openType : AlibcOpenType.AlibcOpenTypeAuto,
-                    isNeedCustomNativeFailMode : false,
-                    nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
-                    schemeType : AlibcSchemeType.AlibcSchemeTmall,
-                    taokeParams : {},
-                    backUrl:"",
-                    callback: (result){
-                        print('淘客登录 ' + json.encode(result));
-                    });
+        url:"",	//必须参数，用于授权登录的url
+        openType : AlibcOpenType.AlibcOpenTypeAuto,
+        isNeedCustomNativeFailMode : false,
+        nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
+        schemeType : AlibcSchemeType.AlibcSchemeTmall,
+        taokeParams : {},
+        backUrl:"",
+        callback: (result){
+            print('淘客登录 ' + json.encode(result));
+        },
+    );
 ```
 
 * 唤起淘宝，openByUrl方式
 
-```
+``` dart
  /**
    * @description: 通过url打开,包括h5，唤起手淘等
    * @param 
@@ -157,20 +146,22 @@ FlutterAlibc.loginOut();
    *  }
    */
    FlutterAlibc.openByUrl(
-                    url:"",	//必须参数
-                    openType : AlibcOpenType.AlibcOpenTypeAuto,
-                    isNeedCustomNativeFailMode : false,
-                    nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
-                    schemeType : AlibcSchemeType.AlibcSchemeTmall,
-                    taokeParams : {},
-                    backUrl:"",
-                    callback: (result){
-                        print('openByURL ' + json.encode(result));
-                    });
+        url:"",	//必须参数
+        openType : AlibcOpenType.AlibcOpenTypeAuto,
+        isNeedCustomNativeFailMode : false,
+        nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
+        schemeType : AlibcSchemeType.AlibcSchemeTmall,
+        taokeParams : {},
+        backUrl:"",
+        callback: (result){
+            print('openByURL ' + json.encode(result));
+        },
+  );
 ```
 
 * 唤起淘宝，openItemDetail方式
-```
+
+``` dart
 /**
    * @description: 打开商品详情
    * @param 
@@ -180,21 +171,23 @@ FlutterAlibc.loginOut();
    * @return: 同openByUrl
    */
     FlutterAlibc.openItemDetail(
-										itemID:"",	//必须参数
-                    openType : AlibcOpenType.AlibcOpenTypeAuto,
-                    isNeedCustomNativeFailMode : false,
-                    nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
-                    schemeType : AlibcSchemeType.AlibcSchemeTmall,
-                    taokeParams : {},
-                    trackParam : {}, //需要额外追踪的业务数据
-                    backUrl:"",
-                    callback: (result){
-                        print('openItemDetail ' + json.encode(result));
-                    });
+        itemID:"",	//必须参数
+        openType : AlibcOpenType.AlibcOpenTypeAuto,
+        isNeedCustomNativeFailMode : false,
+        nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
+        schemeType : AlibcSchemeType.AlibcSchemeTmall,
+        taokeParams : {},
+        trackParam : {}, //需要额外追踪的业务数据
+        backUrl:"",
+        callback: (result){
+            print('openItemDetail ' + json.encode(result));
+        },
+    );
 ```
 
 * 打开店铺，openShop方式
-```
+
+``` dart
 /**
    * @description: 打开店铺
    * @param 
@@ -203,21 +196,23 @@ FlutterAlibc.loginOut();
    * result: 同openByUrl
    */
     FlutterAlibc.openShop(
-										shopId:"",	//必须参数
-                    openType : AlibcOpenType.AlibcOpenTypeAuto,
-                    isNeedCustomNativeFailMode : false,
-                    nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
-                    schemeType : AlibcSchemeType.AlibcSchemeTmall,
-                    taokeParams : {},
-                    trackParam : {}, //需要额外追踪的业务数据
-                    backUrl:"",
-                    callback: (result){
-                         print('openShop ' + json.encode(result));
-                    });
+        shopId:"",	//必须参数
+        openType : AlibcOpenType.AlibcOpenTypeAuto,
+        isNeedCustomNativeFailMode : false,
+        nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
+        schemeType : AlibcSchemeType.AlibcSchemeTmall,
+        taokeParams : {},
+        trackParam : {}, //需要额外追踪的业务数据
+        backUrl:"",
+        callback: (result){
+              print('openShop ' + json.encode(result));
+        },
+    );
 ```
 
 * 打开购物车，openCart方式
-```
+
+``` dart
 /**
    * @description: 打开购物车
    * @param 
@@ -226,25 +221,28 @@ FlutterAlibc.loginOut();
    * result: 同openByUrl
    */
     FlutterAlibc.openCart(
-                    openType : AlibcOpenType.AlibcOpenTypeAuto,
-                    isNeedCustomNativeFailMode : false,
-                    nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
-                    schemeType : AlibcSchemeType.AlibcSchemeTmall,
-                    taokeParams : {},
-                    trackParam : {}, //需要额外追踪的业务数据
-                    backUrl:"",
-                    callback: (result){
-                          print('openShop ' + json.encode(result));
-                    });
+        openType : AlibcOpenType.AlibcOpenTypeAuto,
+        isNeedCustomNativeFailMode : false,
+        nativeFailMode :    AlibcNativeFailMode.AlibcNativeFailModeNone,
+        schemeType : AlibcSchemeType.AlibcSchemeTmall,
+        taokeParams : {},
+        trackParam : {}, //需要额外追踪的业务数据
+        backUrl:"",
+        callback: (result){
+              print('openShop ' + json.encode(result));
+        },
+    );
 ```
 
 
 * 是否设置同步打点
-```
+
+``` dart
 FlutterAlibc.syncForTaoke(true);
 ````
 
 * 是否使用Native Alipay
-```
+
+``` dart
 FlutterAlibc.useAlipayNative(true);
 ```
