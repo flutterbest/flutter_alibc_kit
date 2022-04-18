@@ -1,6 +1,6 @@
 name: alibc_kit
 description: Flutter版本的阿里百川,android V4.0.0.40 ios V4.0.1.17。更新日期：2022-04-18
-version: 0.0.1-nullsafety
+version: 1.0.0-nullsafety
 homepage: https://github.com/flutterbest/flutter_alibc_kit.git
 
 environment:

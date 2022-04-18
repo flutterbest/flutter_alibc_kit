@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_alibc/albc_tools.dart';
-import 'package:flutter_alibc/alibc_const_key.dart';
-import 'package:flutter_alibc/alibc_model.dart';
+import 'package:alibc_kit/albc_tools.dart';
+import 'package:alibc_kit/alibc_const_key.dart';
+import 'package:alibc_kit/alibc_model.dart';
 
 typedef LoginCallback = void Function(LoginModel model);
 typedef OpenCallback = void Function(TradeResult model);
@@ -39,7 +38,7 @@ class FlutterAlibc {
   ///}
   static Future<InitModel> initAlibc({String? version, String? appName}) async {
     Map result = await _channel
-            .invokeMethod("initAlibc", {"version": version, "appName": appName});
+        .invokeMethod("initAlibc", {"version": version, "appName": appName});
     return InitModel(
         result[AlibcConstKey.errorCode], result[AlibcConstKey.errorMessage]);
   }

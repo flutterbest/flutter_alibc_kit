@@ -10,6 +10,7 @@ iOS标准版      4.0.1.17
 ```
 
 pub地址：[flutter_alibc](https://pub.dev/packages/alibc_kit)
+
 github地址：[flutter_alibc](https://github.com/flutterbest/flutter_alibc_kit.git)
 
 
@@ -23,7 +24,7 @@ Android: 注意在新版本gradle编译时,会强制校验远程仓库是否存�
 * 头文件引入
 
 ``` dart
-import 'package:flutter_alibc/flutter_alibc.dart';
+import 'package:alibc_kit/flutter_alibc.dart';
 ```
 
 * 初始化

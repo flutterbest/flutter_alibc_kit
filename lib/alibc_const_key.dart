@@ -1,12 +1,11 @@
 import 'package:collection/collection.dart' show IterableExtension;
+
 ///
 /// @Author: 无星
 /// @Date: 2019-08-30 15:55:44
 /// @Last Modified by: 无星
 /// @Last Modified time: 2019-08-30 17:17:07
 ///
-
-import 'package:flutter/foundation.dart';
 
 class AlibcConstKey {
   // 错误码
@@ -58,5 +57,6 @@ enum CallBackType {
 }
 
 T? enumFromString<T>(Iterable<T> values, String value) {
-  return values.firstWhereOrNull((type) => type.toString().split('.').last == value);
+  return values
+      .firstWhereOrNull((type) => type.toString().split('.').last == value);
 }
