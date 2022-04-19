@@ -9,16 +9,18 @@ Android标准版  4.0.0.40
 iOS标准版      4.0.1.17 
 ```
 
-pub地址：[flutter_alibc](https://pub.dev/packages/alibc_kit)
 
-github地址：[flutter_alibc](https://github.com/flutterbest/flutter_alibc_kit.git)
-
-
-## Getting Started
+## 开始配置
 ### 工程性配置
 
 参考[阿里百川官网](https://baichuan.taobao.com/docs/doc.htm?spm=a3c0d.7629140.0.0.a838be48k4hYDc&treeId=129&articleId=106383&docType=1)
+
 Android: 注意在新版本gradle编译时,会强制校验远程仓库是否存在.pom文件, 阿里百川仓库目前缺少.pom文件, 因此目前先使用较低版本gradle
+
+### 注意点
+
+1. 该版本需使用V6版本的安全图片，V6版本的安全图片可在[百川套件平台](https://suite.baichuan.taobao.com/?spm=a3c0d.7629140.0.0.70e6be48TzC7BS)下载。
+2. 原yw_1222.jpg文件名需改为yw_1222_baichuan.jpg。
 
 ### 方法说明
 * 头文件引入
