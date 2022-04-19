@@ -20,9 +20,10 @@ Android: 注意在新版本gradle编译时,会强制校验远程仓库是否存�
 ### 注意点
 
 1. 该版本需使用V6版本的安全图片，V6版本的安全图片可在[百川套件平台](https://suite.baichuan.taobao.com/?spm=a3c0d.7629140.0.0.70e6be48TzC7BS)下载。
-2. 原yw_1222.jpg文件名需改为yw_1222_baichuan.jpg。
+2. 通过第1步，重新下载V6版本的安全图，并把yw_1222.jpg文件名改为yw_1222_baichuan.jpg。
 
 ### 方法说明
+
 * 头文件引入
 
 ``` dart
