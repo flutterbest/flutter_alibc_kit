@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:alibc_kit/flutter_alibc.dart';
+import 'package:flutter_alibc/flutter_alibc.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('flutter_alibc');
