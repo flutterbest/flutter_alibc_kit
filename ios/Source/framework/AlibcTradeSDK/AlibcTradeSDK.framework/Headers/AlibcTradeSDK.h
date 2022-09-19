@@ -16,6 +16,8 @@
 #import "AlibcTradeService.h"
 #import <AlibcTradeBiz/AlibcTradeShowParams.h>
 
+#define AlibcTradeSDKVersion @"4.1.0.0"
+
 /// @brief 登录通知
 extern NSString *const ALBCTradeNotificationUserLoggedIn;
 /// @brief 登出通知
